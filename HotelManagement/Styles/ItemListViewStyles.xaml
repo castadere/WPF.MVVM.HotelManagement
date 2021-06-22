@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:HotelManagement.Controls">
+
+    <ControlTemplate x:Key="ItemListControlTemplate"
+                     TargetType="{x:Type controls:ItemListControl}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Content="ADD"
+                        Margin="0,0,5,0"
+                        Command="{TemplateBinding AddCommand}" />
+
+                <Button Content="EDIT"
+                        Margin="0,0,5,0" />
+
+                <Button Content="REMOVE" />
+
+            </StackPanel>
+            <DataGrid x:Name="ItemsDataGrid"
+                      Grid.Row="1"
+                      IsReadOnly="True"
+                      ItemsSource="{TemplateBinding Items}"
+                      SelectedItem="{TemplateBinding SelectedItem}" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type controls:ItemListControl}">
+        <Setter Property="Template"
+                Value="{StaticResource ItemListControlTemplate}" />
+    </Style>
+</ResourceDictionary>

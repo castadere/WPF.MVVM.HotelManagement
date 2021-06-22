@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="HotelManagement.Views.ReservationDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelManagement.Views"
+             mc:Ignorable="d" 
+             Background="AliceBlue"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center">
+            <DatePicker Text="Check In"
+                Margin="0,0,20,0" />
+            <DatePicker Text="Check Out"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TabControl>
+                <TabItem Header="Rooms">
+                    <DataGrid Grid.Column="0" />
+                </TabItem>
+                <TabItem Header="Comments">
+                    <RichTextBox />
+                </TabItem>
+            </TabControl>
+
+            <TabControl Grid.Column="1">
+                <TabItem Header="Available Rooms">
+                    <DataGrid Grid.Column="0"
+                              IsReadOnly="True" />
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            
+            <Button Content="SAVE"
+                    Height="30"
+                    Margin="0,0,5,0"/>
+            
+            <Button Content="CLEAR"
+                    Height="30"
+                    Margin="0,0,5,0" />
+        </StackPanel>
+    </Grid>
+</UserControl>
