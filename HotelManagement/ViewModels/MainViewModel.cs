@@ -57,13 +57,17 @@ namespace HotelManagement.ViewModels
         public DelegateCommand NavigateToRooms => _navigateToRooms ?? 
             new DelegateCommand(ExecuteNavigateToRooms);
         
+        public DelegateCommand NavigateToReservations => _navigateToReservations ??
+            new DelegateCommand(ExecuteNavigateToReservations);
+
+        #endregion
+
+        #region Private methods
+
         private void ExecuteNavigateToRooms(object obj)
         {
             _navigationService.NavigateTo<IRoomListView>();
         }
-
-        public DelegateCommand NavigateToReservations => _navigateToReservations ??
-            new DelegateCommand(ExecuteNavigateToReservations);
 
         private void ExecuteNavigateToReservations(object obj)
         {
