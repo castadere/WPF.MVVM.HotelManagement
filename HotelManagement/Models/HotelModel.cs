@@ -6,6 +6,6 @@ namespace HotelManagement.Models
     {
         public string Name { get; set; }
 
-        public ICollection<RoomModel> Rooms { get; } = new HashSet<RoomModel>();
+        public virtual ICollection<RoomModel> Rooms { get; } = new HashSet<RoomModel>();
     }
 }

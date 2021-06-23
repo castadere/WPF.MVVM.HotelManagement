@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace HotelManagement.Models
 {
@@ -15,6 +14,7 @@ namespace HotelManagement.Models
 
         public int NumberOfChildren { get; set; }
 
-        public ICollection<RoomModel> Rooms { get; } = new HashSet<RoomModel>();
+        public int RoomId { get; set; }
+        public virtual RoomModel Room { get; set; }
     }
 }
