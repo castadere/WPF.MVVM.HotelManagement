@@ -4,6 +4,14 @@
 
     <ControlTemplate x:Key="ItemListControlTemplate"
                      TargetType="{x:Type controls:ItemListControl}">
+        <ControlTemplate.Resources>
+            <Style TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="10" />
+                <Setter Property="Width"
+                        Value="45" />
+            </Style>
+        </ControlTemplate.Resources>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
