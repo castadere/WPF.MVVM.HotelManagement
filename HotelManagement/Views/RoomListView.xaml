@@ -11,6 +11,8 @@
     <Grid>
         <controls:ItemListControl Items="{Binding Items}"
                                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                                  AddCommand="{Binding AddCommand}" />
+                                  AddCommand="{Binding AddCommand}"
+                                  EditCommand="{Binding EditCommand}"
+                                  RemoveCommand="{Binding RemoveCommand}" />
     </Grid>
 </UserControl>

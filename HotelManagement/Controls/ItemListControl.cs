@@ -22,16 +22,35 @@ namespace HotelManagement.Controls
         public static readonly DependencyProperty AddCommandProperty =
             DependencyProperty.Register("AddCommand", typeof(ICommand), typeof(ItemListControl), new PropertyMetadata());
 
+        public static readonly DependencyProperty EditCommandProperty =
+            DependencyProperty.Register("EditCommand", typeof(ICommand), typeof(ItemListControl), new PropertyMetadata());
+
+        public static readonly DependencyProperty RemoveCommandProperty =
+            DependencyProperty.Register("RemoveCommand", typeof(ICommand), typeof(ItemListControl), new PropertyMetadata());
+
+
+        public IEnumerable<BaseModel> Items
+        {
+            get { return (IEnumerable<BaseModel>)GetValue(ItemsProperty); }
+            set { SetValue(ItemsProperty, value); }
+        }
+
         public BaseModel SelectedItem
         {
             get { return (BaseModel)GetValue(SelectedItemProperty); }
             set { SetValue(SelectedItemProperty, value); }
         }
 
-        public IEnumerable<BaseModel> Items
+        public ICommand EditCommand
         {
-            get { return (IEnumerable<BaseModel>)GetValue(ItemsProperty); }
-            set { SetValue(ItemsProperty, value); }
+            get { return (ICommand)GetValue(EditCommandProperty); }
+            set { SetValue(EditCommandProperty, value); }
+        }
+
+        public ICommand RemoveCommand
+        {
+            get { return (ICommand)GetValue(RemoveCommandProperty); }
+            set { SetValue(RemoveCommandProperty, value); }
         }
 
         public ICommand AddCommand

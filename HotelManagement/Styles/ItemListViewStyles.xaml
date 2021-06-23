@@ -24,10 +24,11 @@
                         Command="{TemplateBinding AddCommand}" />
 
                 <Button Content="EDIT"
-                        Margin="0,0,5,0" />
+                        Margin="0,0,5,0"
+                        Command="{TemplateBinding EditCommand}" />
 
-                <Button Content="REMOVE" />
-
+                <Button Content="REMOVE"
+                        Command="{TemplateBinding RemoveCommand}" />
             </StackPanel>
             <DataGrid x:Name="ItemsDataGrid"
                       Grid.Row="1"
