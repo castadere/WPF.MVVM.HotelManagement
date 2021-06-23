@@ -14,7 +14,6 @@ namespace HotelManagement.Models
 
         public int NumberOfChildren { get; set; }
 
-        public int RoomId { get; set; }
         public virtual RoomModel Room { get; set; }
     }
 }

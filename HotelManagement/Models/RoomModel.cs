@@ -10,7 +10,6 @@ namespace HotelManagement.Models
 
         public int NumberOfBeds { get; set; }
 
-        public int HotelId { get; set; }
         public virtual HotelModel Hotel { get; set; }
     }
 }

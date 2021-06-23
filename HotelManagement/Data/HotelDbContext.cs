@@ -1,4 +1,5 @@
-﻿using HotelManagement.Models;
+﻿using HotelManagement.Data.EntityConfigurations;
+using HotelManagement.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelManagement.Data
@@ -26,6 +27,8 @@ namespace HotelManagement.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new RoomModelConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
 
