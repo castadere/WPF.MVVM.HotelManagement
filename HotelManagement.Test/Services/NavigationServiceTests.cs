@@ -1,5 +1,9 @@
-﻿using HotelManagement.Services;
+﻿using HotelManagement.Models;
+using HotelManagement.Services;
 using HotelManagement.Views;
+using NSubstitute;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
 using Xunit;
 
 namespace HotelManagement.Test.Services
@@ -11,7 +15,14 @@ namespace HotelManagement.Test.Services
         {
             var navigationService = new NavigationService();
 
-            navigationService.NavigateTo<IRoomDetailView>();
+            var navigationSubject = new Subject<(IView, BaseModel)>();
+
+            navigationService.WhenNavigationChanged.Returns(navigationSubject.AsObservable());
+
+            (IView, BaseModel) value = (Substitute.For<IRoomDetailView>(), null);
+
+            navigationSubject.OnNext(value);
+
         }
     }
 }

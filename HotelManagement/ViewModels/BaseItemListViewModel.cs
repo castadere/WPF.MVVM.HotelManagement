@@ -27,8 +27,6 @@ namespace HotelManagement.ViewModels
             _dataService = dataService;
             
             InitializeSubscriptions(dataService);
-
-            //SelectedItem = Items.FirstOrDefault();
         }
 
         #endregion
@@ -76,6 +74,11 @@ namespace HotelManagement.ViewModels
 
         private void RemoveItem(object obj)
         {
+            if (SelectedItem == null)
+            {
+                return;
+            }
+
             _dataService.Remove(SelectedItem.Id);
         }
 

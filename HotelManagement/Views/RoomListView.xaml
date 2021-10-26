@@ -9,10 +9,13 @@
              d:DesignWidth="800"
              DataContext="{Binding RoomListViewModel, Source={StaticResource Locator}}">
     <Grid>
-        <controls:ItemListControl Items="{Binding Items}"
+        <!--<controls:ItemListControl Items="{Binding Items}"
                                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                                   AddCommand="{Binding AddCommand}"
                                   EditCommand="{Binding EditCommand}"
-                                  RemoveCommand="{Binding RemoveCommand}" />
+                                  RemoveCommand="{Binding RemoveCommand}" />-->
+
+        <Button Content="Search" 
+                Command="{Binding SearchCommand}" />
     </Grid>
 </UserControl>
